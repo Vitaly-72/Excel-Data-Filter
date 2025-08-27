@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтрация Excel файлов</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Фильтрация Excel файлов</h1>
+        
+        <div class="upload-section">
+            <h2>1. Загрузите Excel файл</h2>
+            <input type="file" id="fileInput" class="file-input" accept=".xlsx,.xls,.csv">
+            <div id="fileInfo" class="file-stats"></div>
+            <div id="fileDetails"></div>
+        </div>
+
+        <div class="search-section">
+            <h2>2. Введите поисковый запрос</h2>
+            <input type="text" id="searchInput" class="search-input" placeholder="Введите текст для поиска...">
+            <button id="filterBtn" class="btn" disabled>Отфильтровать</button>
+            <div class="progress-bar">
+                <div id="progress" class="progress" style="width: 0%"></div>
+            </div>
+            <div id="debugInfo" class="debug-info" style="display: none;"></div>
+        </div>
+
+        <div class="results-section">
+            <h2>3. Результаты поиска</h2>
+            <div class="table-controls">
+                <button id="resetColsBtn" class="btn">Показать все столбцы</button>
+                <button id="exportBtn" class="btn">Экспорт результатов</button>
+                <button id="debugToggle" class="btn">Отладка</button>
+            </div>
+            <div id="resultsInfo" class="results-info"></div>
+            <div id="resultsContainer"></div>
+        </div>
+    </div>
+
+     <script src="script.js"></script>
+</body>
+</html>
